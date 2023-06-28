@@ -1,0 +1,54 @@
+private void leerActionPerformed(java.awt.event.ActionEvent evt) {                                     
+        // TODO add your handling code here:
+try {
+                    String newName = nombre.getText();
+                    String nameNumberString;
+                    String name;
+                    long number;
+                    int index;
+
+                    File file = new File("D:\\Importante\\Poo\\Sexta Actividad\\Contactos.txt");
+
+                    if (!file.exists()) {
+
+                        file.createNewFile();
+                    }
+
+
+                    RandomAccessFile raf
+                            = new RandomAccessFile(file, "rw");
+                    boolean found = false;
+
+
+                    while (raf.getFilePointer() < raf.length()) {
+
+                        nameNumberString = raf.readLine();
+
+
+                        String[] lineSplit
+                                = nameNumberString.split("!");
+
+                        name = lineSplit[0];
+                        number = Long.parseLong(lineSplit[1]);
+
+                       if (name.equals(newName)){
+                        nombre.setText(String.valueOf(name));
+                        numero.setText(String.valueOf(number));
+                       
+                       }         
+                    }
+                }
+                catch (IOException ioe)
+                {
+
+                    System.out.println(ioe);
+                }
+                catch (NumberFormatException nef)
+                {
+
+                }
+
+            }
+    {
+
+    }    
