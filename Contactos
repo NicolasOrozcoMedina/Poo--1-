@@ -1,0 +1,11 @@
+package contactos;
+
+public class Contactos {
+  
+    public static void main(String[] args) {
+        // TODO code application logic here
+        VP ventana = new VP();
+        ventana.setVisible(true);
+    }
+    
+}
